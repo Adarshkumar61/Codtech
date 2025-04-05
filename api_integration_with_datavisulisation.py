@@ -9,7 +9,7 @@ app = Flask(__name__)
 conn = sqlite3.connect('contact_book.db')
 c = conn.cursor()
 
-# Create table
+# Creating table
 c.execute('''CREATE TABLE IF NOT EXISTS contacts
              (name text, phone_number text)''')
 conn.commit()
@@ -50,7 +50,7 @@ def delete_contact():
     conn.commit()
     return jsonify({'message': 'Contact deleted successfully'}), 200
 
-# Data visualization
+# Data visualization:
 def visualize_contacts():
     c.execute("SELECT * FROM contacts")
     contacts = c.fetchall()

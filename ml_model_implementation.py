@@ -26,15 +26,16 @@ svm.fit(X_train, y_train)
 
 # Make predictions on the testing set
 y_pred = svm.predict(X_test)
-y_pred_x_train = svm.predict(X_train)
+pred_x_train = svm.predict(X_train)
 
 # Evaluate the model's performance
 accuracy = accuracy_score(y_test, y_pred)
-acc_on_x_train = accuracy_score(y_train, y_pred_x_train)
+acc_on_x_train = accuracy_score(y_train, pred_x_train)
 print("Accuracy:", accuracy)
 print("Accuracy: ", acc_on_x_train)
 print("Classification Report:")
 print(classification_report(y_test, y_pred))
+print(classification_report(y_train, pred_x_train))
 
 # Use the model to make predictions on new, unseen data
 new_data = [[5.1, 3.5, 1.4, 0.2], [4.9, 3.0, 1.4, 0.2]]

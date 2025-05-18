@@ -3,7 +3,7 @@ import sqlite3
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-app = Flask(__name__)
+app = Flask(__name__) 
 
 # Connect to SQLite database
 conn = sqlite3.connect('contact_book.db')

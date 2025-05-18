@@ -44,7 +44,7 @@ def read_data(file_name):
         reader = csv.reader(file)
         for row in reader:
             data.append(row)
-    return data
+    return data 
 
 # Main function
 def main():
